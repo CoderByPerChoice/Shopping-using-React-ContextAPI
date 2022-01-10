@@ -40,7 +40,7 @@ function Products() {
                     <option value="Phones">Phones</option>
                 </select>
             </div>
-            <div class="col-12 col-sm col-md d-flex flex-wrap align-items-center">
+            <div class="col-12 col-sm-12 col-md d-flex flex-wrap align-items-center">
                 {/* <div className="row row-content align-items-center">
                 <div className="col-12 col-sm-4 align-self-center"> */}
                 {products.map((product) => {

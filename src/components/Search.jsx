@@ -25,30 +25,24 @@ function Search() {
         <>
             <h1>Search</h1>
             <hr />
-            <div class="row justify-content-center">
-                <div class="col-12 col-sm col-md d-flex justify-content-center">
-                    <input type="text" value={searchText} placeholder="Enter search text" onChange={(e) => setSearchText(e.target.value)} />
-                </div>
+            <div class="container align-items-center filter">
+                <input type="text" value={searchText} placeholder="Enter search text" onChange={(e) => setSearchText(e.target.value)} />
             </div>
-            <div class="row justify-content-center">
-                <>
-                    {
-                        products.length > 0 ?
-                            <div class="col-12 col-sm col-md d-flex flex-wrap align-items-center">
-                                {
-                                    products.map((product) => {
-                                        return <ProductCard product={product} key={product.id} />
-                                    })
-                                }
+            {
+                products.length > 0 ?
+                    <div class="col-12 col-sm-12 col-md d-flex flex-wrap align-items-center">
+                        {
+                            products.map((product) => {
+                                return <ProductCard product={product} key={product.id} />
+                            })
+                        }
 
-                            </div>
-                            :
-                            <div class="col-12 col-sm col-md d-flex justify-content-center">
-                                <h4>No product/s found...</h4>
-                            </div>
-                    }
-                </>
-            </div>
+                    </div>
+                    :
+                    <div class="col-12 col-sm col-md d-flex justify-content-center">
+                        <h4>No product/s found...</h4>
+                    </div>
+            }
         </>
     );
 }
