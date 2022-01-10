@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css?family=Alata');
+
+body{
+  background: #eee !important;
+  font-family: 'Alata', sans-serif;
+}
+
+.navbar {
+    padding-left: 5px;
+}
+
+.nav-img {
+  width: 3%;
+}
+
+.filter {
+  margin-top: 10px;
+}
+
+.card{
+  border-radius: 8px;
+  border: 1px solid #cccccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  box-sizing: border-box;
+  width: 200px;
+  height: 350px;
+  transition: all linear 200ms;
+}
+
+.card:hover{
+  /* transform: scale(1.1); */
+  transition: all linear 200ms;
+  z-index: 1;
+  box-shadow: 1px 1px 10px rgba(0,0,0,.3);
+  cursor: pointer;
+  background: linear-gradient(45deg, #c20d16, rgb(0, 0, 0));
+  color: white;
+}
+
+.card img {
+  min-height: 150px;
+}
+
+.cart-img {
+  min-height: 150px;
+}
+
+.row {
+  width: 100%;
+}
+
+.qty input {
+  width: 30px;
+}
+
+.Italic {
+  font-style: italic;
+}
+
+.detail-card div {
+  padding-bottom: 20px;
+}
+
+.row-header {
+  margin: 0px auto;
+  padding: 0px 0px; }
+
+.row-content {
+  margin: 0px auto;
+  padding: 50px 0px;
+  border-bottom: 1px ridge;
+  min-height: 400px; }
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.carousel {
+    background:#e9aeb6;
+}
+.carousel-item {
+  height: 450px;      
+}
+
+.carousel-item img {
+  position: absolute;
+  top: 0;
+  left: 35%;
+  min-height: 250px;
+  height: 250px;
+}
+
+.nav-link.active { 
+  background: #eee !important;
+}
+
+div[role="alert"] {
+  color: red;
+}
+
+.desktop-badge {
+    white-space: nowrap;
+    text-align: center;
+    line-height: 18px;
+    padding: 0 6px;
+    height: 18px;
+    background: #ff3f6c;
+    position: absolute;
+    border-radius: 50%;
+    font-size: 10px;
+    color: #fff;
+    left: 425px;
+    top: 10px;
+    font-weight: 700;
+}
+
+.float-right {
+  float: right;
+}
+
+.price-panel {
+  font-size: 12px;
+}

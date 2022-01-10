@@ -1,0 +1,307 @@
+[
+    {
+        "id": 1,
+        "name": "Adidas",
+        "category": "Shoes",
+        "description": "Raised eyestay tpu , deco stitching on counter and broad lace is a specialty of the shoe. Ortholite socks for more cushioning and comfort. Nova midsole :-. Midsole provides extra comfort and cushioning. Nova outsole :- durable, long lasting wear , ultimate traction and grip on multiple surface.",
+        "price": 500,
+        "photo": "shoe1.png",
+        "featured": true,
+        "sizes": [
+            {
+                "sizeid": "1",
+                "size": 7
+            },
+            {
+                "sizeid": "2",
+                "size": 8
+            },
+            {
+                "sizeid": "3",
+                "size": 9
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Shoe 2",
+        "category": "Shoes",
+        "description": "Shoe 2",
+        "price": 550,
+        "photo": "shoe2.png",
+        "featured": false,
+        "sizes": [
+            {
+                "sizeid": "4",
+                "size": 5
+            },
+            {
+                "sizeid": "5",
+                "size": 6
+            },
+            {
+                "sizeid": "6",
+                "size": 7
+            },
+            {
+                "sizeid": "7",
+                "size": 8
+            },
+            {
+                "sizeid": "8",
+                "size": 9
+            },
+            {
+                "sizeid": "9",
+                "size": 10
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "name": "Shoe 3",
+        "category": "Shoes",
+        "description": "Shoe 3",
+        "price": 600,
+        "photo": "shoe3.png",
+        "featured": false,
+        "sizes": [
+            {
+                "sizeid": "10",
+                "size": 8
+            },
+            {
+                "sizeid": "11",
+                "size": 9
+            },
+            {
+                "sizeid": "12",
+                "size": 10
+            },
+            {
+                "sizeid": "13",
+                "size": 11
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "name": "Shoe 4",
+        "category": "Shoes",
+        "description": "Shoe 4",
+        "price": 650,
+        "photo": "shoe4.png",
+        "featured": false,
+        "sizes": [
+            {
+                "sizeid": "14",
+                "size": 7
+            },
+            {
+                "sizeid": "15",
+                "size": 8
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "name": "Shoe 5",
+        "category": "Shoes",
+        "description": "Shoe 5",
+        "price": 700,
+        "photo": "shoe5.png",
+        "featured": false,
+        "sizes": [
+            {
+                "sizeid": "16",
+                "size": 10
+            },
+            {
+                "sizeid": "17",
+                "size": 11
+            }
+        ]
+    },
+    {
+        "id": 6,
+        "name": "Ninja Pro",
+        "category": "Watches",
+        "description": "Unisex Ninja Pro Full Metal Body SpO2 Smartwatch 11BSWAAY#2 - Red",
+        "price": 1700,
+        "photo": "watch1.png",
+        "featured": true,
+        "sizes": [
+            {
+                "sizeid": "18",
+                "size": "33mm"
+            }
+        ]
+    },
+    {
+        "id": 7,
+        "name": "Watch 2",
+        "category": "Watches",
+        "description": "Watch 2",
+        "price": 2700,
+        "photo": "watch2.png",
+        "featured": false,
+        "sizes": [
+            {
+                "sizeid": "19",
+                "size": "33mm"
+            }
+        ]
+    },
+    {
+        "id": 8,
+        "name": "Watch 3",
+        "category": "Watches",
+        "description": "Watch 3",
+        "price": 1750,
+        "photo": "watch3.png",
+        "featured": false,
+        "sizes": [
+            {
+                "sizeid": "20",
+                "size": "40mm"
+            }
+        ]
+    },
+    {
+        "id": 9,
+        "name": "Watch 4",
+        "category": "Watches",
+        "description": "Watch 4",
+        "price": 3700,
+        "photo": "watch4.png",
+        "featured": false,
+        "sizes": [
+            {
+                "sizeid": "21",
+                "size": "40mm"
+            }
+        ]
+    },
+    {
+        "id": 10,
+        "name": "One Plus",
+        "category": "Phones",
+        "description": "Camera: Sony IMX 766 50MP+8MP+2MP AI Triple Camera, Display: 6.43-inch, 90Hz Fluid AMOLED display, Memory, Storage & SIM: 8GB RAM | 128GB, Connectivity: Dual SIM, Operating System: OxygenOS 11.3, In-display fingerprint sensor.",
+        "price": 27000,
+        "photo": "smartphone.png",
+        "featured": true,
+        "sizes": [
+            {
+                "sizeid": "22",
+                "size": "6 inches"
+            }
+        ]
+    },
+    {
+        "id": 11,
+        "name": "LEOTUDE",
+        "category": "Shirts",
+        "description": "A Style For Every Story introding the colorful trendy texture of fashion for all generations in extreme fashionable wardrobe collection.",
+        "price": 700,
+        "photo": "shirt1.png",
+        "featured": true,
+        "sizes": [
+            {
+                "sizeid": "23",
+                "size": "S"
+            },
+            {
+                "sizeid": "24",
+                "size": "M"
+            },
+            {
+                "sizeid": "25",
+                "size": "L"
+            }
+        ]
+    },
+    {
+        "id": 12,
+        "name": "Shirt 2",
+        "category": "Shirts",
+        "description": "Shirt 2",
+        "price": 800,
+        "photo": "shirt2.png",
+        "featured": false,
+        "sizes": [
+            {
+                "sizeid": "26",
+                "size": "S"
+            },
+            {
+                "sizeid": "27",
+                "size": "M"
+            },
+            {
+                "sizeid": "28",
+                "size": "L"
+            },
+            {
+                "sizeid": "29",
+                "size": "XL"
+            },
+            {
+                "sizeid": "30",
+                "size": "XXL"
+            }
+        ]
+    },
+    {
+        "id": 13,
+        "name": "Shirt 3",
+        "category": "Shirts",
+        "description": "Shirt 3",
+        "price": 900,
+        "photo": "shirt3.png",
+        "featured": false,
+        "sizes": [
+            {
+                "sizeid": "31",
+                "size": "XL"
+            },
+            {
+                "sizeid": "32",
+                "size": "XXL"
+            }
+        ]
+    },
+    {
+        "id": 14,
+        "name": "Shirt 4",
+        "category": "Shirts",
+        "description": "Shirt 4",
+        "price": 1000,
+        "photo": "shirt4.png",
+        "featured": false,
+        "sizes": [
+            {
+                "sizeid": "33",
+                "size": "M"
+            },
+            {
+                "sizeid": "34",
+                "size": "L"
+            }
+        ]
+    },
+    {
+        "id": 15,
+        "name": "Park Avenue",
+        "category": "LadiesWear",
+        "description": "Add a dash of style to your formal look wearing this shirt Designed by Park Avenue. This shirt has an Ainsley collar, and an interesting all-over print. You can pair it with matching trousers and stylish pumps.",
+        "price": 2500,
+        "photo": "cloth1.png",
+        "featured": true,
+        "sizes": [
+            {
+                "sizeid": "35",
+                "size": "S"
+            }
+        ]
+    }
+]
