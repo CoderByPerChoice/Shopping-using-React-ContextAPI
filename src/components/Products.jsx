@@ -1,7 +1,9 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import ProductCard from "./ProductCard";
+import { ProductContext } from "../ProductContext";
 
 function Products() {
+    const { products: allProducts } = useContext(ProductContext);
     const [products, setProducts] = useState([]);
     const defaultProductFilter = "All";
     const [productFilter, setProductFilter] = useState(defaultProductFilter);
@@ -11,16 +13,13 @@ function Products() {
     }, []);
 
     const fetchProducts = async (productCategory) => {
-        const rsp = await fetch("/products.json");
-        const allProducts = await rsp.json();
-        if (productCategory === defaultProductFilter) {
-            setProducts(allProducts);
-        }
-        else {
+        if (productCategory !== defaultProductFilter) {
             const filteredProduct = allProducts.filter(({ category }) => { return category === productCategory });
             setProducts(filteredProduct);
         }
-
+        else {
+            setProducts(allProducts);
+        }
     };
 
     function onProductFilterChange(e) {
@@ -41,13 +40,9 @@ function Products() {
                 </select>
             </div>
             <div class="col-12 col-sm-12 col-md d-flex flex-wrap align-items-center">
-                {/* <div className="row row-content align-items-center">
-                <div className="col-12 col-sm-4 align-self-center"> */}
                 {products.map((product) => {
                     return <ProductCard product={product} key={product.id} />
                 })}
-                {/* </div>
-            </div> */}
             </div>
         </>
     );

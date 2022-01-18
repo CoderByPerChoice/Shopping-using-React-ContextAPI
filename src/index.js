@@ -4,13 +4,16 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import 'react-toastify/dist/ReactToastify.css';
 import { BrowserRouter } from "react-router-dom";
 import { CartProvider } from "./CartContext";
+import { ProductProvider } from "./ProductContext";
 import "./styles.css";
 
 ReactDOM.render(
     <BrowserRouter>
-        <CartProvider>
-            <App />
-        </CartProvider>
+        <ProductProvider>
+            <CartProvider>
+                <App />
+            </CartProvider>
+        </ProductProvider>
     </BrowserRouter>
     ,
     document.getElementById("root"));

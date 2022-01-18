@@ -1,34 +1,26 @@
-import React, { useState, useEffect } from "react";
+import React, { useContext } from "react";
 import {
     Carousel,
     CarouselItem,
     CarouselIndicators,
-    CarouselCaption,
     CarouselControl,
-    Link,
 } from 'reactstrap';
+import { useNavigate } from "react-router-dom";
+import { ProductContext } from "../ProductContext";
 
 function Home() {
-    const [products, setProducts] = useState([]);
+    const { featuredProducts } = useContext(ProductContext);
     // State for Active index
     const [activeIndex, setActiveIndex] = React.useState(0);
 
     // State for Animation
     const [animating, setAnimating] = React.useState(false);
 
-    useEffect(() => {
-        fetchFeaturedProducts();
-    }, []);
-
-    const fetchFeaturedProducts = async () => {
-        const rsp = await fetch("/products.json");
-        const allProducts = await rsp.json();
-        const filteredProduct = allProducts.filter(({ featured }) => { return featured === true });
-        setProducts(filteredProduct);
-    };
-
     // Items array length
-    const itemLength = products.length - 1
+    const itemLength = featuredProducts.length - 1;
+
+    // For navigation
+    const navigate = useNavigate();
 
     // Previous button for Carousel
     const previousButton = () => {
@@ -46,22 +38,16 @@ function Home() {
         setActiveIndex(nextIndex);
     }
 
-    function addCart() {
-    }
     // Carousel Item Data
-    const carouselItemData = products.map((item) => {
+    const carouselItemData = featuredProducts.map((item) => {
         return (
             <CarouselItem
                 key={item.id}
                 onExited={() => setAnimating(false)}
                 onExiting={() => setAnimating(true)}
             >
-                <a href={`/product/${item.id}`}>
+                <a href="#" onClick={() => { navigate("/product/" + item.id) }}>
                     <img class="d-block img-fluid" src={`/images/${item.photo}`} alt={item.name} />
-                    {/* <CarouselCaption
-                    captionHeader={item.name}
-                    captionText={`${item.price}/-`}
-                /> */}
                     <div class="carousel-caption d-none d-md-block">
 
                         <h2>{item.name} <span
@@ -82,7 +68,7 @@ function Home() {
             }}>
                 <Carousel dark previous={previousButton} next={nextButton}
                     activeIndex={activeIndex}>
-                    <CarouselIndicators items={products}
+                    <CarouselIndicators items={featuredProducts}
                         activeIndex={activeIndex}
                         onClickHandler={(newIndex) => {
                             if (animating) return;

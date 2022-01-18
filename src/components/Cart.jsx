@@ -4,12 +4,8 @@ import { useNavigate } from "react-router-dom";
 import ProductSummary from './ProductSummary';
 
 function Cart() {
-    const { cart, setCart } = useContext(CartContext);
+    const { cart, removeProductFromCart } = useContext(CartContext);
     const navigate = useNavigate();
-
-    function RemoveClicked(prodId) {
-        setCart(cart.filter((c) => { return c.product.id !== prodId }));
-    }
 
     function renderCartItem(itemInCart) {
         return (
@@ -23,7 +19,7 @@ function Cart() {
                     <h6>Price: <i class="fa fa-inr"></i>{itemInCart.product.price}</h6>
                     <h6>Size: {itemInCart.size}</h6>
                     <p class="d-flex justify-content-between">
-                        <a href='#' onClick={() => { RemoveClicked(itemInCart.product.id) }}><i class="fa fa-trash"></i></a>
+                        <a href='#' onClick={() => { removeProductFromCart(itemInCart.product.id) }}><i class="fa fa-trash"></i></a>
                         <a href='#' onClick={() => { navigate("/product/" + itemInCart.product.id) }}><i class="fa fa-pencil"></i></a>
                     </p>
                 </div>

@@ -1,8 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import ProductCard from "./ProductCard";
+import { ProductContext } from "../ProductContext";
 
 function Search() {
     const [searchText, setSearchText] = useState("");
+    const { products: allProducts } = useContext(ProductContext);
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
@@ -10,14 +12,12 @@ function Search() {
     }, [searchText]);
 
     const fetchProducts = async () => {
-        const rsp = await fetch("/products.json");
-        const allProducts = await rsp.json();
-        if (searchText === "") {
-            setProducts(allProducts);
-        }
-        else {
+        if (searchText !== "") {
             const filteredProduct = allProducts.filter(({ name, category }) => { return category.toLowerCase().match(searchText.toLowerCase()) || name.toLowerCase().match(searchText.toLowerCase()) });
             setProducts(filteredProduct);
+        }
+        else {
+            setProducts(allProducts);
         }
     };
 
@@ -36,7 +36,6 @@ function Search() {
                                 return <ProductCard product={product} key={product.id} />
                             })
                         }
-
                     </div>
                     :
                     <div class="col-12 col-sm col-md d-flex justify-content-center">
