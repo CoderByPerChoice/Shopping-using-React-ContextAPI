@@ -5,7 +5,7 @@ import StripeCheckout from 'react-stripe-checkout';
 
 function ProductSummary() {
     const navigate = useNavigate();
-    const { cart, emptyCart } = useContext(CartContext);
+    const { cart, emptyCart, error } = useContext(CartContext);
     let TotalAmount = 0;
     cart.map((c) => {
         TotalAmount = TotalAmount + (c.qty * c.product.price);
@@ -15,6 +15,9 @@ function ProductSummary() {
         emptyCart();
         navigate("/confirmation", { state: token });
     }
+
+    if (error) throw error;
+
     return (
         <>
             {

@@ -4,7 +4,7 @@ import { ProductContext } from "../ProductContext";
 
 function Search() {
     const [searchText, setSearchText] = useState("");
-    const { products: allProducts } = useContext(ProductContext);
+    const { products: allProducts, error } = useContext(ProductContext);
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
@@ -20,6 +20,7 @@ function Search() {
             setProducts(allProducts);
         }
     };
+    if (error) return error;
 
     return (
         <>

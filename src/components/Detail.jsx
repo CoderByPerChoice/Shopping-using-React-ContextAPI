@@ -3,9 +3,10 @@ import { useParams } from "react-router-dom";
 import { CartContext } from "../CartContext";
 import { ProductContext } from "../ProductContext";
 import { ToastContainer } from 'react-toastify';
+import PageNotFound from "./PageNotFound";
 
 function Detail() {
-    const { cart, addProductToCart } = useContext(CartContext);
+    const { cart, addProductToCart, error } = useContext(CartContext);
     const { products } = useContext(ProductContext);
     const { id } = useParams();
     const [product, setProduct] = useState([]);
@@ -38,6 +39,9 @@ function Detail() {
         fetchFilteredProduct();
         document.getElementById('qty').select();
     }, []);
+
+    if (error) throw error;
+    if (!product) return <PageNotFound />
 
     return (
         <>

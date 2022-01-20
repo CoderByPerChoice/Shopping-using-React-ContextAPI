@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 import { ProductContext } from "../ProductContext";
 
 function Home() {
-    const { featuredProducts } = useContext(ProductContext);
+    const { featuredProducts, error } = useContext(ProductContext);
     // State for Active index
     const [activeIndex, setActiveIndex] = React.useState(0);
 
@@ -58,6 +58,8 @@ function Home() {
             </CarouselItem>
         );
     });
+
+    if (error) throw error;
 
     return (
         <>

@@ -14,34 +14,50 @@ export function CartProvider(props) {
     const notifySuccess = (productName) => toast(productName + " added to cart.", { type: 'success', autoClose: 2000 });
     const notifyWarning = (productName) => toast(productName + " updated in cart.", { type: 'warning', autoClose: 2000 });
     const notifyError = (msg) => toast(msg, { type: 'error', autoClose: 2000 });
+    const [error, setError] = useState(null);
 
     function emptyCart() {
-        setCart([]);
+        try {
+            setCart([]);
+        }
+        catch (e) {
+            setError(e);
+        }
     }
 
     function removeProductFromCart(prodId) {
-        setCart(cart.filter((c) => { return c.product.id !== prodId }));
+        try {
+            setCart(cart.filter((c) => { return c.product.id !== prodId }));
+        }
+        catch (e) {
+            setError(e);
+        }
     }
 
     function addProductToCart(quantity, size, product) {
-        if (parseInt(size) > 0 || size !== "") {
-            const itemInCart = cart.filter((p) => p.product.id === product.id);
-            if (itemInCart.length > 0) {
-                setCart(prevCart => {
-                    return cart.map((p) =>
-                        p.product.id === product.id ?
-                            { ...p, qty: quantity, size } : p
-                    );
-                });
-                notifyWarning(itemInCart[0].product.name);
+        try {
+            if (parseInt(size) > 0 || size !== "") {
+                const itemInCart = cart.filter((p) => p.product.id === product.id);
+                if (itemInCart.length > 0) {
+                    setCart(prevCart => {
+                        return cart.map((p) =>
+                            p.product.id === product.id ?
+                                { ...p, qty: quantity, size } : p
+                        );
+                    });
+                    notifyWarning(itemInCart[0].product.name);
+                }
+                else {
+                    setCart(prevCart => [...prevCart, { product, qty: quantity, size }]);
+                    notifySuccess(product.name);
+                }
             }
-            else {
-                setCart(prevCart => [...prevCart, { product, qty: quantity, size }]);
-                notifySuccess(product.name);
-            }
+            else
+                notifyError('Please select size.');
         }
-        else
-            notifyError('Please select size.');
+        catch (e) {
+            setError(e);
+        }
     }
 
     const contextValue = {
@@ -50,6 +66,7 @@ export function CartProvider(props) {
         emptyCart,
         removeProductFromCart,
         addProductToCart,
+        error,
     };
 
     return (

@@ -6,6 +6,7 @@ import Search from "./components/Search";
 import Cart from "./components/Cart";
 import Detail from "./components/Detail";
 import OrderSummary from "./components/OrderSummary";
+import PageNotFound from "./components/PageNotFound";
 
 import { Routes, Route } from "react-router-dom";
 
@@ -15,12 +16,13 @@ function App() {
             <Nav />
             <div className="container">
                 <Routes>
-                    <Route exact path="/" element={<Home />} />
-                    <Route exact path="/cart" element={<Cart />} />
-                    <Route exact path="/search" element={<Search />} />
-                    <Route exact path="/contactus" element={<ContactUs />} />
-                    <Route exact path="/products" element={<Products />} />
-                    <Route exact path="/confirmation" element={<OrderSummary />} />
+                    <Route path="*" element={<PageNotFound />} />
+                    <Route path="/" element={<Home />} />
+                    <Route path="/cart" element={<Cart />} />
+                    <Route path="/search" element={<Search />} />
+                    <Route path="/contactus" element={<ContactUs />} />
+                    <Route path="/products" element={<Products />} />
+                    <Route path="/confirmation" element={<OrderSummary />} />
                     <Route path="/product/:id" element={<Detail />} />
                 </Routes>
             </div>

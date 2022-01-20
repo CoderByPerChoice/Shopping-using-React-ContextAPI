@@ -3,7 +3,7 @@ import ProductCard from "./ProductCard";
 import { ProductContext } from "../ProductContext";
 
 function Products() {
-    const { products: allProducts } = useContext(ProductContext);
+    const { products: allProducts, error } = useContext(ProductContext);
     const [products, setProducts] = useState([]);
     const defaultProductFilter = "All";
     const [productFilter, setProductFilter] = useState(defaultProductFilter);
@@ -26,6 +26,7 @@ function Products() {
         setProductFilter(e.target.value);
         fetchProducts(e.target.value);
     }
+    if (error) throw error;
 
     return (
         <>

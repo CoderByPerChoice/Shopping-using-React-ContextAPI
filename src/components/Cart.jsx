@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import ProductSummary from './ProductSummary';
 
 function Cart() {
-    const { cart, removeProductFromCart } = useContext(CartContext);
+    const { cart, removeProductFromCart, error } = useContext(CartContext);
     const navigate = useNavigate();
 
     function renderCartItem(itemInCart) {
@@ -26,6 +26,9 @@ function Cart() {
             </div>
         );
     }
+
+    if (error) throw error;
+
     return (
         <div className="row">
             <h1>Cart</h1>
