@@ -7,7 +7,7 @@ function Nav() {
 
     return (
         <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-between shadow-sm">
-            <img class="nav-img" src="http://localhost:3000/images/cloth1.png" />
+            <img class="nav-img" src="/images/cloth1.png" />
             <NavLink className="navbar-brand" to="/">
                 Shop-On
             </NavLink>

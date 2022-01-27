@@ -32,7 +32,7 @@ function ProductSummary() {
                                 <div class="d-flex justify-content-between">
                                     <StripeCheckout
                                         name="Shop-On"
-                                        image="http://localhost:3000/images/cloth1.png"
+                                        image="/images/cloth1.png"
                                         amount={TotalAmount * 100}
                                         shippingAddress
                                         token={tokenHandler}
