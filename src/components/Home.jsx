@@ -63,7 +63,7 @@ function Home() {
 
     return (
         <>
-            <h1>Featured products</h1>
+            <h1>Featured products!</h1>
             <hr />
             <div style={{
                 display: 'block'
